@@ -1,0 +1,18 @@
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <!-- Console output -->
+    <appender name="STDOUT" class="com.bitsetd4d.blackbox.BlackBoxConsoleAppender">
+        <!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="TRACE">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Reduce wiremock log level -->
+    <logger name="org.mortbay.log" level="INFO"/>
+
+</configuration>
